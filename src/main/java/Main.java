@@ -121,18 +121,70 @@ public class Main {
 //
 //            dodaj metodę, która pozwala na dodawanie kolejnych kości RAMu - uwaga na ograniczenia dotyczące slotów; w razie braku miejsca, możesz np. usuwać najmniejszą kość i zastępować ją podaną (o ile jest niemniejsza)
 //
-//            na podstawie RAMu przeprowadź podobną zmianę z dyskami twardymi - ich także może być kilka w komputerze; mają różną pojemność i producenta (oraz np. typ i prędkość)
-//
 //            pozostałe zmienne (monitor, printer) także przekształć w klasy - komputer może mieć kilka monitorów i drukarek, każde z nich mają własne parametry
-//
-//            dodaj kolejne peryferia do komputera
-//
-//            za każdym razem uruchamiaj i testuj
-//
-//            dostosowuj metody toString() aby wyświetlały wymagane dane
 //
 //            zastanów się nad metodą, która porówna dwa zestawy komputerowe
 //
 //            np. przypisz jakieś wagi do poszczególnych części i na ich podstawie wyliczaj ocenę
+
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        Processor processor = new Processor("AMD",4);
+        RAM ram = new RAM("Ram", 8);
+        Monitor monitor = new Monitor("Samsung", 16);
+        Printer printer = new Printer("hp",4);
+        Computer computer = new Computer("ATX", processor, ram, 1, monitor, printer);
+        System.out.println(computer.toString());
+
+        RAM ram1 = new RAM("Ram1", 8);
+        computer.addRam(ram1);
+        System.out.println(computer.toString());
+
+        RAM ram2 = new RAM("Ram2", 8);
+        computer.addRam(ram2);
+        System.out.println(computer.toString());
+
+        RAM ram3 = new RAM("Ram3", 4);
+        computer.addRam(ram3);
+        System.out.println(computer.toString());
+
+        RAM ram4 = new RAM("Ram4", 16);
+        computer.addRam(ram4);
+        System.out.println(computer.toString());
+
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+
+        Processor processor1 = new Processor("AMD",8);
+        RAM ram5 = new RAM("Ram5", 16);
+        Monitor monitor1 = new Monitor("Samsung", 20);
+        Printer printer1 = new Printer("hp",1);
+        Computer computer1 = new Computer("ATX", processor1, ram5, 1, monitor1, printer1);
+        System.out.println(computer1.toString());
+
+        RAM ram6 = new RAM("Ram6", 2);
+        computer1.addRam(ram6);
+        System.out.println(computer1.toString());
+
+        RAM ram7 = new RAM("Ram7", 8);
+        computer1.addRam(ram7);
+        System.out.println(computer1.toString());
+
+        RAM ram8 = new RAM("Ram8", 8);
+        computer1.addRam(ram8);
+        System.out.println(computer1.toString());
+
+        RAM ram9 = new RAM("Ram9", 16);
+        computer1.addRam(ram9);
+        System.out.println(computer1.toString());
+
+        computer.compareComputers(computer1);
     }
 }
